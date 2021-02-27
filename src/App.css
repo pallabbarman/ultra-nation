@@ -1,6 +1,12 @@
 .App {
   text-align: center;
 }
+.show-country {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
 .App-link {
   color: #61dafb;
 }
