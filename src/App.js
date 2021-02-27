@@ -11,7 +11,7 @@ function App() {
         fetch('https://restcountries.eu/rest/v2/all')
             .then((res) => res.json())
             .then((data) => setCountries(data))
-            .catch((err) => console.log(err));
+            .catch((err) => console.log('Error', err));
     }, []);
 
     const handleAddCountry = (country) => {
@@ -28,7 +28,11 @@ function App() {
             </div>
             <div className="show-country">
                 {countries.map((country) => (
-                    <Country country={country} handleAddCountry={handleAddCountry} />
+                    <Country
+                        country={country}
+                        key={country.alpha3Code}
+                        handleAddCountry={handleAddCountry}
+                    />
                 ))}
             </div>
         </div>
